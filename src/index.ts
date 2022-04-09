@@ -1,1 +1,3 @@
-let count:string = '123'
+let count:string = '1234'
+console.log(count)
+console.log(count)

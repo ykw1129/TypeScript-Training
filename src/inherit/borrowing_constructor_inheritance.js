@@ -15,4 +15,4 @@ Student.prototype.studying = function () {
     console.log(`studying`)
 }
 let stu1 = new Student('jack', 12, ['math', 'art'],'C')
-console.log(stu1.__proto__.__proto__)
+stu1.eating()

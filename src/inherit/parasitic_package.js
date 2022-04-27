@@ -17,4 +17,3 @@ function createNewPrototypeObj (parent,son){
     Middle.prototype = parent.prototype
     return new Middle()
 }
-let

@@ -1,4 +1,3 @@
-
 function Person(name, age, course = []) {
     this.name = name
     this.age = age
@@ -11,10 +10,10 @@ function Student(name, age, course, classes) {
     Person.call(this, name, age, course)
     this.classes = classes
 }
-function _extends (parent,son){
-    son.prototype = Object.create(parent.prototype)
-    son.prototype.constructor = son
+function _extends (parent){
+    let middle = { }
+    return Object.setPrototypeOf(middle,parent.prototype)
 }
-_extends(Person,Student)
-let stu = new Student('jack', 14, ['math'], 'A')
-console.l
+let middle = _extends(Person)
+Student.prototype = middle
+Student.prototype.constructor = Student

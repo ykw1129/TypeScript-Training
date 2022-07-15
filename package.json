@@ -4,8 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "parcel ./index.html",
-    "dev": "nodemon --watch src/ -e ts --exec ts-node ./src/index.ts"
+    "dev:build": "tsc -w",
+    "dev:start": "nodemon --watch dist js --exec node ./dist/AOP/ClassDecorator.js",
+    "start": "concurrently npm:dev:*",
+    "tsc": "tsc src/AOP/ClassDecorator.ts --target ES5 -w --experimentalDecorators",
+    "ctrl": "ts-node src/controller/HomeController.ts",
+    "beginapp": "nodemon --watch src/ -e ts --exec ts-node ./src/expressapp.ts"
   },
   "keywords": [],
   "author": "",
@@ -14,5 +18,8 @@
     "@types/node": "^17.0.23",
     "ts-node": "^10.7.0",
     "tslib": "^2.3.1"
+  },
+  "dependencies": {
+    "concurrently": "^7.2.2"
   }
 }

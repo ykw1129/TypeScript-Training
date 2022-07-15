@@ -5,7 +5,7 @@ class Person {
     }
 }
 type PersonConstructor = new (...arg: any) => any
-const createInstance = (Constructor: { new(...arg: any): any }) => {
+const createInstance = <T>(Constructor: { new(...arg: any): T }) => {
     return new Person(Constructor.name)
 }
 export { }

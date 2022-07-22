@@ -1,3 +1,4 @@
+import 'reflect-metadata'
 class Collection<T = any>{
     static collection: Collection = new Collection();
     private constructor() { }
@@ -12,10 +13,13 @@ class Collection<T = any>{
         return this.containerMap.has(id);
     }
 }
-
+@Reflect.metadata('class', 'class')
 class UserService {
+    @Reflect.metadata('property', 'property')
     name: string = '人民';
+    @Reflect.metadata('method', 'method')
     public login() {
         console.log(this.name)
     }
 }
+console.log(Reflect.getMetadata('class', UserService))
